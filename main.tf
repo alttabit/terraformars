@@ -22,7 +22,7 @@ resource "okta_user" "terraform_application" {
 }
 
 resource "okta_group" "example_skip" {
-  name        = "Example"
-  description = "My Example Group"
+  name        = "Learner"
+  description = "Student group for accessing learner workspace"
   skip_users  = true
 }
