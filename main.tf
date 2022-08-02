@@ -21,12 +21,6 @@ resource "okta_user" "terraform_application" {
   admin_roles = [ "APP_ADMIN" ]
 }
 
-resource "okta_group" "Learner" {
-  name        = "Learner"
-  description = "Student group for accessing learner workspace"
-  skip_users  = true
-}
-
 resource "okta_group_rule" "Learner" {
   name              = "Learner"
   status            = "ACTIVE"
