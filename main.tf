@@ -21,11 +21,17 @@ resource "okta_user" "terraform_application" {
   admin_roles = [ "APP_ADMIN" ]
 }
 
+resource "okta_group" "Learner" {
+  name        = "Learner"
+  description = "Student group for accessing learner workspace"
+  skip_users  = true
+}
+
 resource "okta_group_rule" "Learner" {
   name              = "Learner"
   status            = "ACTIVE"
   group_assignments = [
-    "00g6117lqyD4jUyny5d7"]
+    "Learner"]
   expression_type   = "urn:okta:expression:1.0"
   expression_value  = "String.startsWith(user.userType,\"Student\")"
 }
