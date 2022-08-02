@@ -26,3 +26,12 @@ resource "okta_group" {
   description = "Student group for accessing learner workspace"
   skip_users  = true
 }
+
+resource "okta_group_rule" "Learner" {
+  name              = "Learner"
+  status            = "ACTIVE"
+  group_assignments = [
+    "00g6117lqyD4jUyny5d7"]
+  expression_type   = "urn:okta:expression:1.0"
+  expression_value  = "String.startsWith(user.userType,\"Student\")"
+}
