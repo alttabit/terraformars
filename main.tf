@@ -21,7 +21,7 @@ resource "okta_user" "terraform_application" {
   admin_roles = [ "APP_ADMIN" ]
 }
 
-resource "okta_group" "example_skip" {
+resource "okta_group" {
   name        = "Learner"
   description = "Student group for accessing learner workspace"
   skip_users  = true
