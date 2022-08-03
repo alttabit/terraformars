@@ -31,7 +31,7 @@ resource "okta_group_rule" "Learner" {
   name              = "Learner"
   status            = "ACTIVE"
   group_assignments = [
-    "00g61ik7masTdAXzI5d7"]
+    "00g61ik7masTdAXzI5d7"] #change me when copypasta#
   expression_type   = "urn:okta:expression:1.0"
-  expression_value  = "String.startsWith(user.userType,\"Student\")"
+  expression_value  = "String.startsWith(user.userType,\"Student\",\"Staff\")"
 }
