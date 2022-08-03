@@ -35,7 +35,7 @@ resource "okta_group_rule" "Learner" {
   expression_type   = "urn:okta:expression:1.0"
   expression_value  = "String.startsWith(user.userType,\"Student\")"
 }
-resource "okta_group_rule" "Learner-staffacc" {
+resource "okta_group_rule" "Learner" {
   name              = "Learner-staffacc"
   status            = "ACTIVE"
   group_assignments = [
