@@ -41,5 +41,5 @@ resource "okta_group_rule" "Learner-staffacc" {
   group_assignments = [
     "00g61ik7masTdAXzI5d7"] #change me when copypasta#
   expression_type   = "urn:okta:expression:1.0"
-  expression_value  = "String.startsWith(user.userType,\"Staff\""
+  expression_value  = "String.startsWith(user.userType,\"Staff\")"
 }
