@@ -20,12 +20,20 @@ resource "okta_user" "terraform_application" {
   last_name = "Application Automation"
   admin_roles = [ "APP_ADMIN" ]
 }
-
+#groups#
 resource "okta_group" "Learner" {
   name        = "Learner"
   description = "Student group for accessing learner workspace"
   skip_users  = true
 }
+
+resource "okta_group" "Staff" {
+  name        = "Staff"
+  description = "Staff group for accessing learner workspace and staff workspace"
+  skip_users  = true
+}
+
+#group rules#
 
 resource "okta_group_rule" "Learner" {
   name              = "Learner"
@@ -33,13 +41,7 @@ resource "okta_group_rule" "Learner" {
   group_assignments = [
     "00g61ik7masTdAXzI5d7"] #change me when copypasta#
   expression_type   = "urn:okta:expression:1.0"
-  expression_value  = "String.startsWith(user.userType,\"Student\")"
+  expression_value  = "String.endsWith(user.primaryEmail,\".co.nz\")"
 }
-resource "okta_group_rule" "Learner-staff" {
-  name              = "Learner-staff"
-  status            = "ACTIVE"
-  group_assignments = [
-    "00g61ik7masTdAXzI5d7"] #change me when copypasta#
-  expression_type   = "urn:okta:expression:1.0"
-  expression_value  = "String.startsWith(user.userType,\"Staff\")"
-}
+
+
