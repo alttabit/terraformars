@@ -41,7 +41,14 @@ resource "okta_group_rule" "Learner" {
   group_assignments = [
     "00g61ik7masTdAXzI5d7"] #change me when copypasta#
   expression_type   = "urn:okta:expression:1.0"
-  expression_value  = "String.endsWith(user.primaryEmail,\".co.nz\")"
+  expression_value  = "String.contains(user.primaryEmail,\".co.nz\")"
 }
 
-
+resource "okta_group_rule" "staff" {
+  name              = "staff"
+  status            = "ACTIVE"
+  group_assignments = [
+    "00g61y3uc88TY2TQy5d7"] #change me when copypasta#
+  expression_type   = "urn:okta:expression:1.0"
+  expression_value  = "String.contains(user.primaryEmail,\".ac.nz\")"
+}
