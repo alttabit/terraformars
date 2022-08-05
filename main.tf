@@ -33,11 +33,10 @@ resource "okta_group" "Staff" {
   skip_users  = true
 }
 
-resource "okta_group" "Master1" {
-  name        = "Master1"
+resource "okta_group" "Master" {
+  name        = "renamed"
   description = "group name test rename using terraform"
   skip_users  = true
-  id="00g5phjsghnAUU9UG5d7"
 }
 
 #group rules#
