@@ -27,15 +27,10 @@ resource "okta_group" "Learner" {
   skip_users  = true
 }
 
-resource "okta_group" "Staff" {
-  name        = "Staff"
-  description = "Staff group for accessing learner workspace and staff workspace"
-  skip_users  = true
-}
 
-resource "okta_group" "master" {
-  name        = "renamed"
-  description = "group name test rename using terraform"
+resource "okta_group" "Okta" {
+  name        = "Okta"
+  description = "Staff group"
   skip_users  = true
 }
 
@@ -60,6 +55,28 @@ resource "okta_group_rule" "staff" {
 }
 
 #apps
+
+resource "okta_app_saml" "Atlassian" {
+  label                    = "Atlassian"
+  preconfigured_app        ="Atlassian Confluence Cloud"
+  sso_url                  = "https://dev-00369028.okta.com"
+  destination              = "https://nextek.atlassian.net/wiki/home"
+  subject_name_id_template = "$${user.userName}"
+  subject_name_id_format   = "urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress"
+  response_signed          = true
+  signature_algorithm      = "RSA_SHA256"
+  digest_algorithm         = "SHA256"
+  honor_force_authn        = false
+  authn_context_class_ref  = "urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport"
+
+  attribute_statements {
+    type         = "GROUP"
+    name         = "groups"
+    filter_type  = "REGEX"
+    filter_value = ".*"
+  }
+}
+
 resource "okta_app_group_assignment" "atlassian" {
   app_id   = "0oa5kubr9pKNI8XYt5d7"
   group_id = "00g61y3uc88TY2TQy5d7"
