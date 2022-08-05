@@ -60,7 +60,6 @@ resource "okta_group_rule" "staff" {
 }
 
 #apps
-
 resource "okta_app_group_assignment" "atlassian" {
   app_id   = "0oa5kubr9pKNI8XYt5d7"
   group_id = "00g61y3uc88TY2TQy5d7"
