@@ -33,6 +33,13 @@ resource "okta_group" "Staff" {
   skip_users  = true
 }
 
+resource "okta_group" "Master1" {
+  name        = "Master1"
+  description = "group name test rename using terraform"
+  skip_users  = true
+  id="00g5phjsghnAUU9UG5d7"
+}
+
 #group rules#
 
 resource "okta_group_rule" "Learner" {
@@ -41,7 +48,7 @@ resource "okta_group_rule" "Learner" {
   group_assignments = [
     "00g61ik7masTdAXzI5d7"] #change me when copypasta#
   expression_type   = "urn:okta:expression:1.0"
-  expression_value  = "String.stringContains(user.email,\"@example.com\")"
+  expression_value  = "String.stringContains(user.email,\".co.nz\")"
 }
 
 resource "okta_group_rule" "staff" {
@@ -50,5 +57,5 @@ resource "okta_group_rule" "staff" {
   group_assignments = [
     "00g61y3uc88TY2TQy5d7"] #change me when copypasta#
   expression_type   = "urn:okta:expression:1.0"
-  expression_value  = "String.stringContains(user.email,\".com\")"
+  expression_value  = "String.stringContains(user.email,\".ac.nz\")"
 }
