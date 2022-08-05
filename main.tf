@@ -28,7 +28,11 @@ resource "okta_group" "Learner" {
 }
 
 
-
+resource "okta_group" "Okta" {
+  name        = "Okta"
+  description = "Staff group"
+  skip_users  = true
+}
 
 #group rules#
 
@@ -41,13 +45,19 @@ resource "okta_group_rule" "Learner" {
   expression_value  = "String.stringContains(user.email,\".co.nz\")"
 }
 
-
+resource "okta_group_rule" "staff" {
+  name              = "staff"
+  status            = "ACTIVE"
+  group_assignments = [
+    "00g61y3uc88TY2TQy5d7"] #change me when copypasta#
+  expression_type   = "urn:okta:expression:1.0"
+  expression_value  = "String.stringContains(user.email,\".ac.nz\")"
+}
 
 #apps
 
 resource "okta_app_saml" "Atlassian" {
   label                    = "Atlassian"
-  preconfigured_app        ="Atlassian Confluence"
   sso_url                  = "https://dev-00369028.okta.com"
   recipient                = "https://nextek.atlassian.net"
   destination              = "https://nextek.atlassian.net/wiki/home"
