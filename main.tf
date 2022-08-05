@@ -56,9 +56,9 @@ resource "okta_group_rule" "staff" {
 
 #apps
 
-resource "okta_app_saml" "Atlassian Cloud" {
+resource "okta_app_saml" "Atlassian_Cloud" {
   label                    = "Atlassian Cloud"
-  preconfigured_app        ="Atlassian Cloud"
+  preconfigured_app        ="Atlassian_Cloud"
   sso_url                  = "https://dev-00369028.okta.com"
   recipient                = "https://nextek.atlassian.net"
   destination              = "https://nextek.atlassian.net/wiki/home"
