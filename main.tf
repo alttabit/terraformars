@@ -60,6 +60,7 @@ resource "okta_app_saml" "Atlassian" {
   label                    = "Atlassian"
   preconfigured_app        ="Atlassian Confluence Cloud"
   sso_url                  = "https://dev-00369028.okta.com"
+  recipient                = "https://nextek.atlassian.net"
   destination              = "https://nextek.atlassian.net/wiki/home"
   subject_name_id_template = "$${user.userName}"
   subject_name_id_format   = "urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress"
