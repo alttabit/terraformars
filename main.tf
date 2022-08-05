@@ -58,3 +58,10 @@ resource "okta_group_rule" "staff" {
   expression_type   = "urn:okta:expression:1.0"
   expression_value  = "String.stringContains(user.email,\".ac.nz\")"
 }
+
+#apps
+
+resource "okta_app_group_assignment" "atlassian" {
+  app_id   = "0oa5kubr9pKNI8XYt5d7"
+  group_id = "00g61y3uc88TY2TQy5d7"
+}
