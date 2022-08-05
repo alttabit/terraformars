@@ -56,7 +56,7 @@ resource "okta_group_rule" "staff" {
 
 #apps
 
-resource "okta_app_saml" "Atlassian" {
+resource "okta_app_saml" "Atlassian Cloud" {
   label                    = "Atlassian Cloud"
   preconfigured_app        ="Atlassian Cloud"
   sso_url                  = "https://dev-00369028.okta.com"
