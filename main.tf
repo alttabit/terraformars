@@ -47,7 +47,7 @@ resource "okta_group_rule" "Learner" {
 
 resource "okta_app_saml" "Atlassian" {
   label                    = "Atlassian"
-  preconfigured_app        ="Atlassian Confluence Cloud"
+  preconfigured_app        ="Atlassian Confluence"
   sso_url                  = "https://dev-00369028.okta.com"
   recipient                = "https://nextek.atlassian.net"
   destination              = "https://nextek.atlassian.net/wiki/home"
