@@ -33,7 +33,7 @@ resource "okta_group" "Staff" {
   skip_users  = true
 }
 
-resource "okta_group" "Master" {
+resource "okta_group" "master" {
   name        = "renamed"
   description = "group name test rename using terraform"
   skip_users  = true
@@ -64,3 +64,6 @@ resource "okta_app_group_assignment" "atlassian" {
   app_id   = "0oa5kubr9pKNI8XYt5d7"
   group_id = "00g61y3uc88TY2TQy5d7"
 }
+
+
+
