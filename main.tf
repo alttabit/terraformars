@@ -20,13 +20,13 @@ resource "okta_user" "terraform_application" {
   last_name = "Application Automation"
   admin_roles = [ "APP_ADMIN" ]
 }
+
 #groups#
 resource "okta_group" "Learner" {
   name        = "Learner"
   description = "Student group for accessing learner workspace"
   skip_users  = true
 }
-
 
 resource "okta_group" "Okta" {
   name        = "Okta"
@@ -54,11 +54,11 @@ resource "okta_group_rule" "staff" {
   expression_value  = "String.stringContains(user.email,\".ac.nz\")"
 }
 
+
 #apps
 
-resource "okta_app_saml" "Atlassian_Cloud" {
+resource "okta_app_saml" "Atlassian" {
   label                    = "Atlassian Cloud"
-  preconfigured_app        ="atlassian cloud"
   sso_url                  = "https://dev-00369028.okta.com"
   recipient                = "https://nextek.atlassian.net"
   destination              = "https://nextek.atlassian.net/wiki/home"
