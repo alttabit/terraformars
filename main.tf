@@ -28,14 +28,18 @@ resource "okta_group" "Learner" {
 }
 
 
-resource "okta_group" "Okta" {
-  name        = "Okta"
-  description = "Staff group"
-  skip_users  = true
-}
+
 
 #group rules#
 
+resource "okta_group_rule" "Learner" {
+  name              = "Learner"
+  status            = "ACTIVE"
+  group_assignments = [
+    "00g61ik7masTdAXzI5d7"] #change me when copypasta#
+  expression_type   = "urn:okta:expression:1.0"
+  expression_value  = "String.stringContains(user.email,\".co.nz\")"
+}
 
 
 
