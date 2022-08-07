@@ -57,27 +57,13 @@ resource "okta_group_rule" "staff" {
 #apps
 
 resource "okta_app_saml" "gworkspace" {
-  label                    = "Google Workspace"
-  sso_url                  = "https://dev-00369028.okta.com/app/google/exk5kydc8z9gMCWLJ5d7/sso/saml"
-  recipient                = "http://uverse0.com"
-  destination              = "http://uverse0.com"
-  audience                 = "https://dev-00369028.okta.com/app/google/exk5kydc8z9gMCWLJ5d7/sso/samlaudience"
-  subject_name_id_template = "$${user.userName}"
-  subject_name_id_format   = "urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress"
-  response_signed          = true
-  signature_algorithm      = "RSA_SHA256"
-  digest_algorithm         = "SHA256"
-  honor_force_authn        = false
-  authn_context_class_ref  = "urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport"
-
-  attribute_statements {
-    type         = "GROUP"
-    name         = "groups"
-    filter_type  = "REGEX"
-    filter_value = ".*"
-  }
+  # (resource arguments)
 }
 
+resource "okta_app_group_assignment" "atlassian" {
+  app_id   = okta_app_saml.Atlassian.id
+  group_id = "00g61y3uc88TY2TQy5d7"
+}
 
 
 
