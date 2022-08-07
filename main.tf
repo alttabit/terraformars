@@ -78,10 +78,6 @@ resource "okta_app_saml" "gworkspace" {
   }
 }
 
-resource "okta_app_group_assignment" "atlassian" {
-  app_id   = okta_app_saml.Atlassian.id
-  group_id = "00g61y3uc88TY2TQy5d7"
-}
 
 
 
