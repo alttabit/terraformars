@@ -59,8 +59,8 @@ resource "okta_group_rule" "staff" {
 resource "okta_app_saml" "gworkspace" {
   label                    = "Google Workspace"
   sso_url                  = "https://dev-00369028.okta.com/app/google/exk5kydc8z9gMCWLJ5d7/sso/saml"
-  recipient                = "uverse0.com"
-  destination              = "uverse0.com"
+  recipient                = "http://uverse0.com"
+  destination              = "http://uverse0.com"
   audience                 = "https://dev-00369028.okta.com/app/google/exk5kydc8z9gMCWLJ5d7/sso/samlaudience"
   subject_name_id_template = "$${user.userName}"
   subject_name_id_format   = "urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress"
