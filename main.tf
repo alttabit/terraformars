@@ -64,7 +64,7 @@ resource "okta_app_saml" "gworkspace" {
 }
 JSON
   label = "Google Workspace"
-  preconfigured_app = "google_workspace"
+  preconfigured_app = "Google Workspace"
   saml_version = "1.1"
   status = "ACTIVE"
   user_name_template = "$${source.login}"
