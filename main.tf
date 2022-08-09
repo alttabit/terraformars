@@ -47,9 +47,9 @@ resource "okta_group_rule" "Learner" {
 
 #apps
 
-resource "okta_app_saml" "googleworkspace1" {
+resource "okta_app_saml" "googleworkspace2" {
   preconfigured_app = "google"
-  label             = "Google workspace"
+  label             = "Google workspace 2"
   status            = "ACTIVE"
   saml_version      = "2.0"
 }
