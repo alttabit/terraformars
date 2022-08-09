@@ -54,6 +54,12 @@ resource "okta_app_saml" "googleworkspace2" {
   saml_version      = "2.0"
 }
 
+resource "okta_app_saml" "googleworkspace1" {
+  preconfigured_app = "google"
+  label             = "Google workspace 1"
+  status            = "ACTIVE"
+  saml_version      = "2.0"
+}
 
 
 
