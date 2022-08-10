@@ -51,7 +51,7 @@ resource "okta_group_rule" "Staff" {
   group_assignments = [
     "00g62fdcthqnoyiKY5d7"] #change me when copypasta#
   expression_type   = "urn:okta:expression:1.0"
-  expression_value  = "String.stringContains(user.login,\".ac.nz\")"
+  expression_value  = "String.stringContains(user.email,\".ac.nz\")"
 }
 
 #apps
