@@ -45,11 +45,20 @@ resource "okta_group_rule" "Learner" {
   expression_value  = "String.stringContains(user.email,\".co.nz\")"
 }
 
+resource "okta_group_rule" "Staff" {
+  name              = "Staff"
+  status            = "ACTIVE"
+  group_assignments = [
+    "00g62fdcthqnoyiKY5d7"] #change me when copypasta#
+  expression_type   = "urn:okta:expression:1.0"
+  expression_value  = "String.stringContains(user.login,\".ac.nz\")"
+}
+
 #apps
 
 resource "okta_app_saml" "googleworkspace2" {
   preconfigured_app = "google"
-  label             = "Google workspace 2"
+  label             = "Staff Google workspace "
   status            = "ACTIVE"
   saml_version      = "2.0"
 }
@@ -57,10 +66,18 @@ resource "okta_app_saml" "googleworkspace2" {
 
 resource "okta_app_saml" "googleworkspace1" {
   preconfigured_app = "google"
-  label             = "Google workspace 1"
+  label             = "Learner Google workspace"
   status            = "ACTIVE"
   saml_version      = "2.0"
 }
 
+resource "okta_app_group_assignment" "learner google workspace" {
+  app_id ="0oa64b3bf7UL2SoqT5d7"
+  group_id="00g61ik7masTdAXzI5d7"
+}
 
+resource "okta_app_group_assignment" "staff google workspace" {
+  app_id ="0oa64a9c8cGY9to155d7"
+  group_id="00g62fdcthqnoyiKY5d7"
+}
 
