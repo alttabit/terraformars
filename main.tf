@@ -71,12 +71,12 @@ resource "okta_app_saml" "googleworkspace1" {
   saml_version      = "2.0"
 }
 
-resource "okta_app_group_assignment" "learner google workspace" {
+resource "okta_app_group_assignment" "learner_google_workspace" {
   app_id ="0oa64b3bf7UL2SoqT5d7"
   group_id="00g61ik7masTdAXzI5d7"
 }
 
-resource "okta_app_group_assignment" "staff google workspace" {
+resource "okta_app_group_assignment" "staff_google_workspace" {
   app_id ="0oa64a9c8cGY9to155d7"
   group_id="00g62fdcthqnoyiKY5d7"
 }
