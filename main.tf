@@ -64,7 +64,7 @@ resource "okta_app_saml" "googleworkspace2" {
 }
 JSON
   label = "staff Google Workspace"
-  preconfigured_app = "sharepoint_onpremise"
+  preconfigured_app = "google"
   saml_version = "2.0"
   status = "ACTIVE"
   user_name_template = "$${source.login}"
@@ -72,10 +72,18 @@ JSON
 }
 
 resource "okta_app_saml" "learner_workspace" {
-    preconfigured_app = "google"
-  label             = "Learner Google Workspace"
-  status            = "ACTIVE"
-  saml_version      = "1.1"
+  app_settings_json = <<JSON
+{
+    "groupFilter": "app1.*",
+    "siteURL": "https://www.okta.com"
+}
+JSON
+  label = "learner Google Workspace"
+  preconfigured_app = "google"
+  saml_version = "2.0"
+  status = "ACTIVE"
+  user_name_template = "$${source.login}"
+  user_name_template_type = "BUILT_IN"
 }
 
 resource "okta_app_group_assignment" "learner_google_workspace" {
