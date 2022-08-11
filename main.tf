@@ -59,8 +59,8 @@ resource "okta_group_rule" "Staff" {
 resource "okta_app_saml" "staff_workspace" {
     app_settings_json = <<JSON
 {
-    "afwOnly: "false",
-    "domain": "uverse0.com"
+    "groupFilter": "app1.*",
+    "siteURL": "https://www.okta.com"
 }
 JSON
   label = "staff Google Workspace"
@@ -74,8 +74,8 @@ JSON
 resource "okta_app_saml" "learner_workspace" {
   app_settings_json = <<JSON
 {
-    "afwOnly: "false",
-    "domain": "galaxy.uverse0.com"
+    "groupFilter": "app1.*",
+    "siteURL": "https://www.okta.com"
 }
 JSON
   label = "learner Google Workspace"
