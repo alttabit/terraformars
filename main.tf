@@ -56,47 +56,4 @@ resource "okta_group_rule" "Staff" {
 
 #apps
 
-resource "okta_app_saml" "staff_workspace" {
-    app_settings_json = <<JSON
-{
-    "groupFilter": "app1.*",
-    "siteURL": "https://www.okta.com"
-}
-JSON
-  label = "staff Google Workspace"
-  preconfigured_app = "google"
-  saml_version = "2.0"
-  status = "ACTIVE"
-  user_name_template = "$${source.login}"
-  user_name_template_type = "BUILT_IN"
-}
 
-resource "okta_app_saml" "learner_workspace" {
-  app_settings_json = <<JSON
-{
-    "groupFilter": "app1.*",
-    "siteURL": "https://www.okta.com",
-    "domain": "galaxy.uverse0.com"
-}
-JSON
-  label = "learner Google Workspace"
-  preconfigured_app = "google"
-  saml_version = "2.0"
-  status = "ACTIVE"
-  user_name_template = "$${source.login}"
-  user_name_template_type = "BUILT_IN"
-}
-
-resource "okta_app_group_assignment" "learner_google_workspace" {
-  app_id ="0oa64rn5riKzOvBnK5d7"
-  group_id="00g61ik7masTdAXzI5d7"
-}
-
-resource "okta_app_group_assignment" "staff_google_workspace" {
-  app_id ="0oa64a9c8cGY9to155d7"
-  group_id="00g62fdcthqnoyiKY5d7"
-}
-resource "okta_app_group_assignment" "staff_to_learner" {
-  app_id ="0oa64rn5riKzOvBnK5d7"
-  group_id="00g62fdcthqnoyiKY5d7"
-}
