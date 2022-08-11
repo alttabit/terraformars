@@ -58,7 +58,16 @@ resource "okta_group_rule" "Staff" {
 
 resource "okta_app_saml" "googleworkspace2" {
   preconfigured_app = "google"
-  label             = "Staff Google workspace"
+  label             = "Google workspace 2"
+  status            = "ACTIVE"
+  saml_version      = "2.0"
+    skip_users  = true
+  skip_groups = true
+}
+
+resource "okta_app_saml" "learner_workspace" {
+    preconfigured_app = "google"
+  label             = "Learner Google Workspace"
   status            = "ACTIVE"
   saml_version      = "2.0"
     skip_users  = true
