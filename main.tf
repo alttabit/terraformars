@@ -57,18 +57,7 @@ resource "okta_group_rule" "Staff" {
 #apps
 
 resource "okta_app_saml" "googleworkspace2" {
-app_settings_json = <<JSON
-{
-    "groupFilter": "app1.*",
-    "siteURL": "https://www.okta.com"
-}
-JSON
-  label = "Staff Google workspace"
   preconfigured_app = "google"
-  saml_version = "1.1"
-  status = "ACTIVE"
-  user_name_template = "$${source.login}"
-  user_name_template_type = "BUILT_IN"
 }
 
 resource "okta_app_saml" "learner_workspace" {
