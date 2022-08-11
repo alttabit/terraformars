@@ -65,25 +65,17 @@ app_settings_json = <<JSON
 JSON
   label = "Staff Google workspace"
   preconfigured_app = "google"
-  saml_version = "2.0"
+  saml_version = "1.1"
   status = "ACTIVE"
   user_name_template = "$${source.login}"
   user_name_template_type = "BUILT_IN"
 }
 
 resource "okta_app_saml" "learner_workspace" {
-app_settings_json = <<JSON
-{
-    "groupFilter": "app1.*",
-    "siteURL": "https://www.okta.com"
-}
-JSON
-  label = "Staff Google workspace"
-  preconfigured_app = "google"
-  saml_version = "2.0"
-  status = "ACTIVE"
-  user_name_template = "$${source.login}"
-  user_name_template_type = "BUILT_IN"
+    preconfigured_app = "google"
+  label             = "Learner Google Workspace"
+  status            = "ACTIVE"
+  saml_version      = "1.1"
 }
 
 resource "okta_app_group_assignment" "learner_google_workspace" {
