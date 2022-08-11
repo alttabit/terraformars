@@ -61,8 +61,7 @@ resource "okta_app_saml" "googleworkspace2" {
   label             = "Google workspace 2"
   status            = "ACTIVE"
   saml_version      = "2.0"
-    skip_users  = true
-  skip_groups = true
+
 }
 
 resource "okta_app_saml" "learner_workspace" {
@@ -70,8 +69,8 @@ resource "okta_app_saml" "learner_workspace" {
   label             = "Learner Google Workspace"
   status            = "ACTIVE"
   saml_version      = "2.0"
-    skip_users  = true
-  skip_groups = true
+
+  user_name_template = "${source.login}"
 }
 
 resource "okta_app_group_assignment" "learner_google_workspace" {
