@@ -66,7 +66,7 @@ resource "okta_app_saml" "googleworkspace2" {
 }
 
 
-resource "okta_app_saml" "googleworkspace1" {
+resource "okta_app_saml" "gworkspace" {
   preconfigured_app = "google"
   label             = "Google Workspace"
   status            = "ACTIVE"
