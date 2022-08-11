@@ -56,10 +56,10 @@ resource "okta_group_rule" "Staff" {
 
 #apps
 
-resource "okta_app_saml" "staff_workplace" {
+resource "okta_app_saml" "staff_workspace" {
   preconfigured_app = "google"
-  label             = "staff workplace"
+  label             = "Staff Google Workspace"
   status            = "ACTIVE"
-  saml_version      = "2.0"
+  saml_version      = "1.1"
 
 }
