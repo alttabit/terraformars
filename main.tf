@@ -84,7 +84,7 @@ resource "okta_app_group_assignment" "staff_google_workspace" {
   app_id ="0oa64a9c8cGY9to155d7"
   group_id="00g62fdcthqnoyiKY5d7"
 }
-resource "okta_app_group_assignment" "learner_google_workspace" {
+resource "okta_app_group_assignment" "staff_to_learner" {
   app_id ="0oa64b3bf7UL2SoqT5d7"
   group_id="00g62fdcthqnoyiKY5d7"
 }
