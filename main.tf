@@ -69,8 +69,6 @@ resource "okta_app_saml" "learner_workspace" {
   label             = "Learner Google Workspace"
   status            = "ACTIVE"
   saml_version      = "2.0"
-
-  user_name_template = "${source.login}"
 }
 
 resource "okta_app_group_assignment" "learner_google_workspace" {
