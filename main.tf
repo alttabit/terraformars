@@ -65,16 +65,6 @@ resource "okta_app_saml" "googleworkspace2" {
   skip_groups = true
 }
 
-
-resource "okta_app_saml" "googleworkspace1" {
-  preconfigured_app = "google"
-  label             = "learner Google Workspace"
-  status            = "ACTIVE"
-  saml_version      = "2.0"
-  skip_users  = true
-  skip_groups = true
-}
-
 resource "okta_app_group_assignment" "learner_google_workspace" {
   app_id ="0oa64b3bf7UL2SoqT5d7"
   group_id="00g61ik7masTdAXzI5d7"
