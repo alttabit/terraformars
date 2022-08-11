@@ -59,7 +59,7 @@ resource "okta_group_rule" "Staff" {
 resource "okta_app_saml" "staff_workspace" {
     app_settings_json = <<JSON
 {
-  "afwOnly: "false"
+    "afwOnly: "false",
     "domain": "uverse0.com"
 }
 JSON
@@ -74,7 +74,7 @@ JSON
 resource "okta_app_saml" "learner_workspace" {
   app_settings_json = <<JSON
 {
-"afwOnly: "false"
+    "afwOnly: "false",
     "domain": "galaxy.uverse0.com"
 }
 JSON
