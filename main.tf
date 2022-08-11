@@ -56,9 +56,9 @@ resource "okta_group_rule" "Staff" {
 
 #apps
 
-resource "okta_app_saml" "googleworkspace2" {
+resource "okta_app_saml" "googleworkspace1" {
   preconfigured_app = "google"
-  label             = "Google workspace 2"
+  label             = "Google workspace 1"
   status            = "ACTIVE"
   saml_version      = "2.0"
     skip_users  = true
@@ -66,9 +66,9 @@ resource "okta_app_saml" "googleworkspace2" {
 }
 
 
-resource "okta_app_saml" "googleworkspace1" {
+resource "okta_app_saml" "googleworkspace2" {
   preconfigured_app = "google"
-  label             = "Google Workspace"
+  label             = "Google Workspace 2"
   status            = "ACTIVE"
   saml_version      = "2.0"
   skip_users  = true
