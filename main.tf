@@ -63,10 +63,4 @@ resource "okta_app_saml" "staff_workspace" {
   saml_version      = "2.0"
 }
 
-resource "okta_app_saml" "learner_workspace" {
-  preconfigured_app = "google"
-  label             = "Learner Google Workspace"
-  status            = "ACTIVE"
-  saml_version      = "2.0"
-}
 
