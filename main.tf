@@ -61,6 +61,8 @@ resource "okta_app_saml" "googleworkspace2" {
   label             = "Staff Google workspace "
   status            = "ACTIVE"
   saml_version      = "2.0"
+    skip_users  = true
+  skip_groups = true
 }
 
 
@@ -69,6 +71,8 @@ resource "okta_app_saml" "googleworkspace1" {
   label             = "Learner Google workspace"
   status            = "ACTIVE"
   saml_version      = "2.0"
+  skip_users  = true
+  skip_groups = true
 }
 
 resource "okta_app_group_assignment" "learner_google_workspace" {
