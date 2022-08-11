@@ -60,6 +60,6 @@ resource "okta_app_saml" "staff_workspace" {
   preconfigured_app = "google"
   label             = "Staff Google Workspace"
   status            = "ACTIVE"
-  saml_version      = "1.1"
+  saml_version      = "2.0"
 
 }
