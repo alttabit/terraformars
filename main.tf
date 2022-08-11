@@ -58,6 +58,7 @@ resource "okta_group_rule" "Staff" {
 
 resource "okta_app_saml" "googleworkspace2" {
   preconfigured_app = "google"
+  label             = "staff Google Workspace"
 }
 
 resource "okta_app_saml" "learner_workspace" {
