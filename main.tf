@@ -67,5 +67,6 @@ resource "okta_app_saml" "learner_workspace2" {
   label             = "Learner Google Workspace"
   status            = "ACTIVE"
   saml_version      = "2.0"
+  domain = "galaxy.uverse0.com"
 }
 
