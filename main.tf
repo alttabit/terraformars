@@ -75,7 +75,8 @@ resource "okta_app_saml" "learner_workspace" {
   app_settings_json = <<JSON
 {
     "groupFilter": "app1.*",
-    "siteURL": "https://www.okta.com"
+    "siteURL": "https://www.okta.com",
+    "domain": "galaxy.uverse0.com"
 }
 JSON
   label = "learner Google Workspace"
