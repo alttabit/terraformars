@@ -45,7 +45,7 @@ resource "okta_group_rule" "Learner" {
   expression_value  = "String.stringContains(user.email,\".co.nz\")"
 }
 
-resource "okta_group_rule" "Staff" {
+resource "okta_group_rule" "Staff2" {
   name              = "Staff"
   status            = "ACTIVE"
   group_assignments = [
@@ -84,3 +84,4 @@ resource "okta_app_group_assignment" "staff_group_learner_assignment" {
 app_id = okta_app_saml.learner_workspace.id
 group_id = okta_group.Staff.id
 }
+
