@@ -40,7 +40,7 @@ resource "okta_group_rule" "Learner" {
   name              = "Learner"
   status            = "ACTIVE"
   group_assignments = [
-    "00g61ik7masTdAXzI5d7"] #change me when copypasta#
+    okta_group.Learner.id] #change me when copypasta#
   expression_type   = "urn:okta:expression:1.0"
   expression_value  = "String.stringContains(user.email,\".co.nz\")"
 }
@@ -49,7 +49,7 @@ resource "okta_group_rule" "Staff" {
   name              = "Staff"
   status            = "ACTIVE"
   group_assignments = [
-    "00g62fdcthqnoyiKY5d7"] #change me when copypasta#
+    okta_group.Staff.id] #change me when copypasta#
   expression_type   = "urn:okta:expression:1.0"
   expression_value  = "String.stringContains(user.email,\".ac.nz\")"
 }
@@ -62,6 +62,7 @@ resource "okta_app_saml" "staff_workspace" {
   status            = "ACTIVE"
   saml_version      = "2.0"
 }
+
 resource "okta_app_saml" "learner_workspace2" {
     preconfigured_app = "google"
   label             = "Learner Google Workspace"
@@ -69,3 +70,17 @@ resource "okta_app_saml" "learner_workspace2" {
   saml_version      = "2.0"
 }
 
+resource "okta_app_group_assignment" "learner_group_assignment" {
+app_id = okta_app_saml.learner_workspace.id
+group_id = okta_group.Learner.id
+}
+
+resource "okta_app_group_assignment" "staff_group_assignment" {
+app_id = okta_app_saml.staff_workspace.id
+group_id = okta_group.Staff.id
+}
+
+resource "okta_app_group_assignment" "staff_group_learner_assignment" {
+app_id = okta_app_saml.learner_workspace.id
+group_id = okta_group.Staff.id
+}
