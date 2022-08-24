@@ -27,9 +27,6 @@ resource "okta_group" "Learner" {
   description = "Student group for accessing learner workspace"
   skip_users  = true
 }
-resource "okta_group" "test" {
-  # (resource arguments)
-}
 
 resource "okta_group" "Staff" {
   name        = "Okta"
