@@ -10,7 +10,7 @@ terraform {
 # Configure the Okta Provider - API token set in env var.
 provider "okta" {
   org_name  = "dev-00369028"
-  api_token = "005ukqpj32AnM_jS748vd6AsWrOM295fSeqXze-Ont"
+  api_token = "00H2OR5GqaMeNOtDXyGW7ZdZBLsCwZtiVWDLBNWHIS"
 }
 
 resource "okta_user" "terraform_application" {
