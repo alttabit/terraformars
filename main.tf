@@ -38,5 +38,10 @@ resource "okta_group" "Staff" {
 
 
 #apps
-
+resource "okta_app_saml" "staff_google_workspace" {
+preconfigured_app = "google"
+  label             = "Okta"
+  status            = "ACTIVE"
+  saml_version      = "2.0"
+}
 
