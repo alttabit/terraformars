@@ -59,6 +59,12 @@ resource "okta_group_rule" "Staff2" {
 
 #apps
 
+resource "okta_app_saml" "staff_workspace" {
+  preconfigured_app = "google"
+  label             = "Staff Google Workspace"
+  status            = "ACTIVE"
+  saml_version      = "2.0"
+}
 
 resource "okta_app_saml" "learner_workspace2" {
     preconfigured_app = "google"
@@ -67,18 +73,4 @@ resource "okta_app_saml" "learner_workspace2" {
   saml_version      = "2.0"
 }
 
-resource "okta_app_group_assignment" "learner_group_assignment" {
-app_id = okta_app_saml.learner_workspace.id
-group_id = okta_group.Learner.id
-}
-
-resource "okta_app_group_assignment" "staff_group_assignment" {
-app_id = okta_app_saml.staff_workspace.id
-group_id = okta_group.Staff.id
-}
-
-resource "okta_app_group_assignment" "staff_group_learner_assignment" {
-app_id = okta_app_saml.learner_workspace.id
-group_id = okta_group.Staff.id
-}
 
