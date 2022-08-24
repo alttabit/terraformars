@@ -2,7 +2,7 @@ terraform {
   required_providers {
     okta = {
       source = "okta/okta"
-      version = "~> 3.10"
+      version = "~> 3.2"
     }
   }
 }
@@ -27,8 +27,11 @@ resource "okta_group" "Learner" {
   description = "Student group for accessing learner workspace"
   skip_users  = true
 }
+resource "okta_group" "test" {
+  # (resource arguments)
+}
 
-resource "okta_group" "Okta" {
+resource "okta_group" "Staff" {
   name        = "Okta"
   description = "Staff group"
   skip_users  = true
@@ -56,12 +59,6 @@ resource "okta_group_rule" "Staff2" {
 
 #apps
 
-resource "okta_app_saml" "staff_workspace" {
-  preconfigured_app = "google"
-  label             = "Staff Google Workspace"
-  status            = "ACTIVE"
-  saml_version      = "2.0"
-}
 
 resource "okta_app_saml" "learner_workspace2" {
     preconfigured_app = "google"
