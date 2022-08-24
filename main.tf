@@ -36,23 +36,6 @@ resource "okta_group" "Staff" {
 
 #group rules#
 
-resource "okta_group_rule" "Learner" {
-  name              = "Learner"
-  status            = "ACTIVE"
-  group_assignments = [
-    okta_group.Learner.id] #change me when copypasta#
-  expression_type   = "urn:okta:expression:1.0"
-  expression_value  = "String.stringContains(user.email,\".co.nz\")"
-}
-
-resource "okta_group_rule" "Staff2" {
-  name              = "Staff"
-  status            = "ACTIVE"
-  group_assignments = [
-    okta_group.Staff.id] #change me when copypasta#
-  expression_type   = "urn:okta:expression:1.0"
-  expression_value  = "String.stringContains(user.email,\".ac.nz\")"
-}
 
 #apps
 
