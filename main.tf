@@ -43,6 +43,7 @@ preconfigured_app = "google"
   label             = "staff google"
   status            = "ACTIVE"
   saml_version      = "2.0"
+  skip_users  = true
 }
 
 resource "okta_app_saml" "learner_google_workspace" {
