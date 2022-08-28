@@ -51,6 +51,13 @@ preconfigured_app = "google"
   label             = "lear google"
   status            = "ACTIVE"
   saml_version      = "2.0"
-  sso_url = okta_app_saml.staff_google_workspace
+  sso_url = "uverse0.com"
 }
 
+resource "okta_app_saml" "learner2_google_workspace" {
+preconfigured_app = "google"
+  label             = "lear23wre google"
+  status            = "ACTIVE"
+  saml_version      = "2.0"
+  sso_url = "uverse023.com"
+}
