@@ -38,21 +38,8 @@ resource "okta_group" "Staff" {
 
 
 #apps
-resource "okta_app_saml" "staff_google_workspace" {
-preconfigured_app = "google"
-  label             = "staff google"
-  status            = "ACTIVE"
-  saml_version      = "2.0"
-  skip_users  = true
-}
 
-resource "okta_app_saml" "learner_google_workspace" {
-preconfigured_app = "google"
-  label             = "lear google"
-  status            = "ACTIVE"
-  saml_version      = "2.0"
 
-}
 
 resource "okta_app_saml" "learner2_google_workspace" {
 preconfigured_app = "google"
