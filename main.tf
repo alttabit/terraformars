@@ -51,6 +51,6 @@ preconfigured_app = "google"
   label             = "lear google"
   status            = "ACTIVE"
   saml_version      = "2.0"
-  domain            =  "google"
+  sso_url = okta_app_saml.staff_google_workspace
 }
 
