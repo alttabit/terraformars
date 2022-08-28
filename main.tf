@@ -59,8 +59,6 @@ preconfigured_app = "google"
   status            = "ACTIVE"
   saml_version      = "2.0"
     app_settings_json = <<JSON
-    {
        "domain": "uverse0.com",
-    }
 JSON
 }
