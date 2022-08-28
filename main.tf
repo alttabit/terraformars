@@ -58,6 +58,7 @@ preconfigured_app = "google"
   label             = "lear google"
   status            = "ACTIVE"
   saml_version      = "2.0"
-  app_settings_json ={"domain": "uverse0.com",}
-
+    app_settings_json = <<JSON
+       "domain": "uverse0.com"
+JSON
 }
