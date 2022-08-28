@@ -53,12 +53,11 @@ preconfigured_app = "google"
   saml_version      = "2.0"
 }
 
-resource "okta_app_saml" "learnertest_google_workspace" {
+resource "okta_app_saml" "learner2_google_workspace" {
 preconfigured_app = "google"
   label             = "lear google"
   status            = "ACTIVE"
   saml_version      = "2.0"
-    app_settings_json = <<JSON
-       "domain": "uverse0.com",
-JSON
+  app_settings_json ={"domain": "uverse0.com",}
+
 }
