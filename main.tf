@@ -50,3 +50,15 @@ preconfigured_app = "google"
 }
 JSON
 }
+
+resource "okta_app_saml" "staff2_google_workspace" {
+  preconfigured_app = "google"
+  label             = "Google Workspace"
+  status            = "ACTIVE"
+  saml_version      = "2.0"
+  app_settings_json = <<JSON
+{
+    "domain": "galaxi.uverse0.com"
+}
+JSON
+}
