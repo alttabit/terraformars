@@ -46,8 +46,7 @@ preconfigured_app = "google"
   saml_version      = "2.0"
   app_settings_json = <<JSON
 {
-    "domain": "okta",
-    "afwOnly": false
+    "domain": "uverse0.com",
 }
 JSON
 }
