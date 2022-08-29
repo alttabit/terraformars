@@ -44,13 +44,13 @@ preconfigured_app = "google"
   label             = "lear23wre google"
   status            = "ACTIVE"
   saml_version      = "2.0"
-    subject_name_id_template = "$${user.userName}"
-
   app_settings_json = <<JSON
 {
     "domain": "uverse0.com"
 }
 JSON
+user_name_template = "$${source.emailPrefix}"
+user_name_template_type = "BUILT_IN"
 }
 
 resource "okta_app_saml" "stf_google_workspace" {
