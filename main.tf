@@ -47,6 +47,7 @@ preconfigured_app = "google"
   app_settings_json = <<JSON
 {
     "domain": "uverse0.com"
+    "afwOnly": false
 }
 JSON
 user_name_template = "$${fn:substringBefore(source.email, \"@\")}"
@@ -63,6 +64,7 @@ resource "okta_app_saml" "stf_google_workspace" {
   app_settings_json = <<JSON
 {
     "domain": "galaxi.uverse0.com"
+    "afwOnly": false
 }
 JSON
 user_name_template = "$${source.email}"
