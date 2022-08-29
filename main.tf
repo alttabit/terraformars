@@ -53,7 +53,7 @@ JSON
 
 resource "okta_app_saml" "stf_google_workspace" {
   preconfigured_app = "google"
-  label             = "lear23wre google"
+  label             = "stf_google_workspace"
   status            = "ACTIVE"
   saml_version      = "2.0"
   skip_users = true
