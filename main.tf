@@ -49,7 +49,7 @@ preconfigured_app = "google"
     "domain": "uverse0.com"
 }
 JSON
-user_name_template = "$${source.emailPrefix}"
+user_name_template = "$${source.email_prefix}"
 user_name_template_type = "BUILT_IN"
 }
 
