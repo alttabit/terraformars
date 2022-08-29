@@ -56,7 +56,6 @@ resource "okta_app_saml" "stf_google_workspace" {
   label             = "lear23wre google"
   status            = "ACTIVE"
   saml_version      = "2.0"
-  user_name_template = "${source.login}"
   skip_users = true
   skip_groups = true
   app_settings_json = <<JSON
