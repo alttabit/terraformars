@@ -58,7 +58,6 @@ resource "okta_app_saml" "stf_google_workspace" {
   label             = "stf_google_workspace"
   status            = "ACTIVE"
   saml_version      = "2.0"
-  user_name_template = "${user.email}"
   skip_users = true
   skip_groups = true
   app_settings_json = <<JSON
@@ -66,4 +65,6 @@ resource "okta_app_saml" "stf_google_workspace" {
     "domain": "galaxi.uverse0.com"
 }
 JSON
+user_name_template = "$${source.email}"
+user_name_template_type = "BUILT_IN"
 }
