@@ -44,6 +44,8 @@ preconfigured_app = "google"
   label             = "lear23wre google"
   status            = "ACTIVE"
   saml_version      = "2.0"
+    subject_name_id_template = "$${user.userName}"
+  subject_name_id_format   = "urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress"
   app_settings_json = <<JSON
 {
     "domain": "uverse0.com"
@@ -56,6 +58,8 @@ resource "okta_app_saml" "stf_google_workspace" {
   label             = "stf_google_workspace"
   status            = "ACTIVE"
   saml_version      = "2.0"
+    subject_name_id_template = "$${user.email}"
+  subject_name_id_format   = "urn:oasis:names:tc:SAML:1.1:nameid-format:emailPrefix"
   skip_users = true
   skip_groups = true
   app_settings_json = <<JSON
