@@ -46,7 +46,7 @@ preconfigured_app = "google"
   saml_version      = "2.0"
   app_settings_json = <<JSON
 {
-    "domain": "uverse0.com",
+    "domain": "uverse0.com"
 }
 JSON
 }
@@ -58,7 +58,7 @@ resource "okta_app_saml" "staff2_google_workspace" {
   saml_version      = "2.0"
   app_settings_json = <<JSON
 {
-    "domain": "galaxi.uverse0.com",
+    "domain": "galaxi.uverse0.com"
 }
 JSON
 }
