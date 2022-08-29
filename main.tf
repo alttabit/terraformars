@@ -58,7 +58,7 @@ resource "okta_app_saml" "stf_google_workspace" {
   label             = "stf_google_workspace"
   status            = "ACTIVE"
   saml_version      = "2.0"
-  user_name_template = "$${user.email}"
+  user_name_template = user.email
   skip_users = true
   skip_groups = true
   app_settings_json = <<JSON
