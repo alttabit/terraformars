@@ -54,8 +54,8 @@ user_name_template = "$${fn:substringBefore(source.email, \"@\")}"
 user_name_template_type = "BUILT_IN"
 }
 
-resource "okta_app_saml" "stf_google_workspace" {
-  preconfigured_app = "google"
+resource "okta_app_saml" "staff_google_workspace" {
+   preconfigured_app = "google"
   label             = "stf_google_workspace"
   status            = "ACTIVE"
   saml_version      = "2.0"
