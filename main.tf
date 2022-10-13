@@ -34,8 +34,8 @@ resource "okta_group" "Staff" {
   skip_users  = true
 }
 
-resource "okta_group" "Staff22324" {
-  name        = "tes3t group"
+resource "okta_group" "Staff2232ghj4" {
+  name        = "tesfghj3t group"
   description = "Staff group"
   skip_users  = true
 }
