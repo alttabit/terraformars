@@ -34,8 +34,8 @@ resource "okta_group" "Staff" {
   skip_users  = true
 }
 
-resource "okta_group" "Staff2" {
-  name        = "Okta"
+resource "okta_group" "Staff223" {
+  name        = "test group"
   description = "Staff group"
   skip_users  = true
 }
