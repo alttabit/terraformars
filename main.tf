@@ -40,6 +40,12 @@ resource "okta_group" "group35" {
   skip_users  = true
 }
 
+resource "okta_group" "group36" {
+  name        = "group34"
+  description = "34groupth"
+  skip_users  = true
+}
+
 resource "okta_group" "Staff" {
   name        = "Okta"
   description = "Staff group"
