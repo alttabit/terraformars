@@ -10,7 +10,7 @@ terraform {
 # Configure the Okta Provider - API token set in env var.
 provider "okta" {
   org_name  = "dev-00369028"
-  api_token = "00H2OR5GqaMeNOtDXyGW7ZdZBLsCwZtiVWDLBNWHIS"
+  api_token = "00nC6wVV6Jyn0xPNLGNaWTluK0Jt3rk2nhwPh7lIey"
 }
 
 resource "okta_user" "terraform_application" {
@@ -30,6 +30,12 @@ resource "okta_group" "Learner" {
 
 resource "okta_group" "group34" {
   name        = "group34"
+  description = "34groupth"
+  skip_users  = true
+}
+
+resource "okta_group" "group34r57457" {
+  name        = "group34457457"
   description = "34groupth"
   skip_users  = true
 }
